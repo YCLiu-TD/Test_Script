@@ -2,10 +2,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 1. 读取 CSV
 df = pd.read_csv('latency_report.csv')
 
-# 2. 绘制 Planning 总处理时间
 plt.figure()
 plt.plot(df['cycle_idx'], df['total_components_ms'])
 plt.title('Planning Total Components Time per Cycle')
@@ -14,7 +12,6 @@ plt.ylabel('Total Components Time (ms)')
 plt.tight_layout()
 plt.savefig('planning_total_time.png')
 
-# 3. 绘制 CPU 使用率
 plt.figure()
 plt.plot(df['cycle_idx'], df['cpu_usage_percent'])
 plt.title('CPU Usage per Cycle')
